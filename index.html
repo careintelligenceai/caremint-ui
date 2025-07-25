@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CAREMint Console</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="CARE.init()">
+  <h1>🚀 CAREMint Console Running</h1>
+  <p>Mint Tier: Tier 1 (Clone Initiation)</p>
+  <p id="care-status">CARE Status: Initializing...</p>
+
+  <div class="prompt-section">
+    <input type="text" id="user-prompt" placeholder="Ask CARE something..." />
+    <button onclick="CARE.ask()">Send</button>
+  </div>
+
+  <div id="care-response-container">
+    <strong>CARE:</strong> <span id="care-response">Awaiting your command...</span>
+  </div>
+
+  <script src="care.js"></script>
+</body>
+</html>
