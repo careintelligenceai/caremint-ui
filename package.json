@@ -1,0 +1,12 @@
+{
+  "name": "caremint-console",
+  "version": "1.0.0",
+  "description": "CAREMint Console Starter",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
