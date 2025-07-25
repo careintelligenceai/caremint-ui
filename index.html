@@ -1,19 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CAREMint Console</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="container">
-    <h1>🚀 CAREMint Console Running</h1>
-    <p><strong>Mint Tier:</strong> Tier 1 (Clone Initiation)</p>
-    <p><strong>CARE Status:</strong> <span id="care-status">Loading...</span></p>
-    <button onclick="CARE.init()">Activate CARE</button>
-  </div>
-  <script src="care.js"></script>
-  <script src="app.js"></script>
-</body>
-</html>
+<input id="care-input" placeholder="Ask CARE something..." />
+<button onclick="askCARE()">Send</button>
+<p id="care-reply"></p>
+
+<script>
+  async function askCARE() {
+    const input = document.getElementById('care-input').value;
+    const res = await fetch('/api/care', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: input })
+    });
+
+    const data = await res.json();
+    document.getElementById('care-reply').innerText = data.reply;
+  }
+</script>
